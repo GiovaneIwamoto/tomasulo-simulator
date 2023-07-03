@@ -143,13 +143,13 @@ int sc_main(int argc, char *argv[])
         inputbox ibox(fm, "", "Definir tamanhos");
         inputbox::integer size("BPB", bpb_size, 2, 10, 2);
         inputbox::integer bits("N_BITS", n_bits, 1, 3, 1);
-        inputbox::integer m_size("M_SIZE", m_size, 1, 8, 1);
+        inputbox::integer m_size_input("M_SIZE", m_size, 1, 8, 1);
 
         if (ibox.show_modal(size, bits))
         {
             bpb_size = size.value();
             n_bits = bits.value();
-            m_size = m_size.value();
+            m_size = m_size_input.value();
         } });
     sub->append("Número de Estações de Reserva", [&](menu::item_proxy ip)
                 {

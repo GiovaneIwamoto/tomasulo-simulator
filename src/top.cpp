@@ -146,7 +146,7 @@ void top::rob_mode(int n_bits, unsigned int nadd, unsigned int nmul, unsigned in
     mem_r->out_slb(*mem_slb_bus);
 }
 
-void top::rob_modeMN(int n_bits, unsigned int nadd, unsigned int nmul, unsigned int nload, map<string, int> instruct_time, vector<string> instruct_queue, nana::listbox &table, nana::grid &mem_gui, nana::listbox &regs, nana::listbox &instr_gui, nana::label &ccount, nana::listbox &rob_gui, unsigned int m_size)
+void top::rob_mode_mn(int n_bits, unsigned int nadd, unsigned int nmul, unsigned int nload, map<string, int> instruct_time, vector<string> instruct_queue, nana::listbox &table, nana::grid &mem_gui, nana::listbox &regs, nana::listbox &instr_gui, nana::label &ccount, nana::listbox &rob_gui, unsigned int m_size)
 {
     int rob_size = 10;
     CDB = unique_ptr<bus>(new bus("CDB"));
@@ -438,7 +438,7 @@ void top::dump_metrics(string bench_name, int cpu_freq, unsigned int total_instr
     }
     else if (mode == 3)
     {
-        hit_rate = get_rob().get_preditor_mn().get_predictor_mn_hitrate();
+        hit_rate = get_rob().get_preditor_mn().get_predictor_mn_hit_rate();
         out_file << "# Taxa de sucesso - 2 Preditor: " << hit_rate << "%" << endl;
     }
     else
