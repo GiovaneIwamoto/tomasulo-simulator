@@ -1,0 +1,16 @@
+LD R1, 100(R0)
+LD R2, 200(R0)
+LD R3, 300(R0)
+DADDI R4, R1, -1
+DADDI R5, R2, -1
+DADDI R6, R3, -1
+Loop:
+BEQ R4, R0, LoopEnd
+BEQ R5, R0, LoopEnd
+BEQ R6, R0, LoopEnd
+DADDI R4, R4, -1
+DADDI R5, R5, -1
+DADDI R6, R6, -1
+J Loop
+LoopEnd:
+DADD R0, R0, R0

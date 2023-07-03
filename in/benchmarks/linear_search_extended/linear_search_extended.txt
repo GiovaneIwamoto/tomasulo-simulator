@@ -1,0 +1,16 @@
+DADD R11, R0, R0  
+DADD R1, R0, R0   
+Loop:
+BEQ R11, R6, Exit   
+DADD R20, R5, R11
+LD R21, 0(R20)
+BNE R21, R7, CheckNext  
+DADDI R1, R0, 1  
+J Exit   
+CheckNext:
+DADDI R11, R11, 1 
+J Loop   
+Exit:
+DADD R0, R0, R0  
+DADDI R1, R0, 1   
+DADD R0, R0, R0  
