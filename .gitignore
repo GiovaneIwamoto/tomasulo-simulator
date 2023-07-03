@@ -1,2 +1,3 @@
 tfsim
 in/benchmarks/**/metrics.txt
+.vscode
