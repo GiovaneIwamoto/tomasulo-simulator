@@ -145,7 +145,7 @@ int sc_main(int argc, char *argv[])
         inputbox::integer bits("N_BITS", n_bits, 1, 3, 1);
         inputbox::integer m_size_input("M_SIZE", m_size, 1, 8, 1);
 
-        if (ibox.show_modal(size, bits))
+        if (ibox.show_modal(size, bits, m_size_input))
         {
             bpb_size = size.value();
             n_bits = bits.value();
