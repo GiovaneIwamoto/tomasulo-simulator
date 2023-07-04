@@ -178,7 +178,7 @@ void reorder_buffer::leitura_issue()
             }
             else if (flag_mode == 3)
             {
-                ptrs[pos]->prediction_mn = preditor_mn.predict_mn(ptrs[pos]->pc);
+                ptrs[pos]->prediction = preditor_mn.predict_mn(ptrs[pos]->pc);
             }
             else
             {
