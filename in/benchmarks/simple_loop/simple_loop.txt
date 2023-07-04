@@ -13,4 +13,4 @@ DADDI R5, R5, -1
 DADDI R6, R6, -1
 J Loop
 LoopEnd:
-DADD R0, R0, R0
+DADD R0,R0,R0
