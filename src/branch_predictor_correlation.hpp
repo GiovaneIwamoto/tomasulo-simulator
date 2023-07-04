@@ -6,9 +6,8 @@ class branch_predictor_correlation
 private:
     std::vector<int> table;
     unsigned int m, n;
-    unsigned int c_predictions;
+    unsigned int c_predictions, c_hits;
     int max;
-    int c_hits;
 
 public:
     branch_predictor_correlation(unsigned int m, unsigned int n);

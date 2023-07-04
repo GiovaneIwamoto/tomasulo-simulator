@@ -722,10 +722,10 @@ int sc_main(int argc, char *argv[])
         else
             fila = true; });
 
-    bench_sub->append("Loop Branch", [&](menu::item_proxy &ip)
+    bench_sub->append("Log Calc", [&](menu::item_proxy &ip)
                       {
-        string path = "in/benchmarks/loop_branch/loop_branch.txt";
-        bench_name = "loop_branch";
+        string path = "in/benchmarks/log_calc/log_calc.txt";
+        bench_name = "log_calc";
         inFile.open(path);
         if (!add_instructions(inFile, instruction_queue, instruct))
             show_message("Arquivo inválido", "Não foi possível abrir o arquivo");
