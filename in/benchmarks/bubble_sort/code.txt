@@ -11,7 +11,7 @@ for(i=0; i<size-1; i++){
 }
 
 ------------------------------
-Mapeamento de registradores
+Reg Map
 ------------------------------
 R1 -> size
 R2 -> i
@@ -24,7 +24,6 @@ R20 -> size-1
 R21 -> size - i - 1
 
 ------------------------------
-Mapeamento da memória
+Mem Map
 ------------------------------
 10 4 2 5 1 3 6 9 7 10 8 0 0 0 0 0 0 0 0 0 ...
-tam vetor, el1, el2,..., eln-1

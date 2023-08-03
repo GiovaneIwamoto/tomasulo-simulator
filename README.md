@@ -8,42 +8,30 @@ Event-driven simulation of the Tomasulo Algorithm using the C++ interface System
 
 The purpose of this project is to ease the teaching of this algorithm, deemed extremely important to the understanding of out-of-order execution on modern microprocessors.
 
-### **EXECUTION GUIDE**
+### **ABSTRACT**
 
-1. Instale os pacotes necessários para uso da biblioteca Nana
-   `apt install -y unzip libx11-dev libxft-dev libasound2-dev libxcursor-dev`
-2. Execute o script na raíz do repositório para instalar as dependências do simulador
-   `sh get_dep.sh`
-3. Execute com `./tfsim`
+Practical work in Computer Architecture II with the objective of implementing, evaluating, and validating TFSim dynamic branch predictors. Extend the simulator with new significant program sections. Implement a branch prediction scheme based on correlation (m, n). Compare the performance of the implemented branch predictors in TFSim, including the correlation scheme.
 
-- Para maioria dos benchmarks, arquivos de memória e registradores são carregados juntamente com o conjunto de instruções.
-- É possível inserir a lista de instruções e outros valores por linha de comando ou pela barra de opções da interface. Por linha de comando, utilize:
+### **INTRODUCTION**
 
-      -  '-q' para fila de instruções
-      - '-i' para valores de registradores inteiros (32 valores)
-      - '-f' para valores de registradores PF (32 valores)
-      - '-m' para valores de memória (500 valores inteiros)
-      - '-r' para número de unidades funcionais (3 inteiros, um para cada tipo (ADD,MULT,LOAD/STORE))
-      - '-l' para tempo de latência para cada instrução (uma linha para cada instrução, do formato <INSTRUÇÃO> <tempo de latência em ciclos>)
-      - '-s' indica que o programa execute em modo de especulação por hardware (com reorder buffer)
-      * O repositório fornece arquivos de teste já preenchidos na pasta 'in'
-        * Também são fornecidos benchmarks para testes básicos (ideais para validação da ferramenta), incluidos em in/benchmarks
+This work addresses the implementation, evaluation, and validation of dynamic branch predictors in TFSim, a program execution simulator. The specific objectives include extending TFSim with significant program sections for prediction scheme evaluation, implementing the correlation-based branch prediction scheme (m, n), and comparing the performance of the implemented predictors. The study aims to enhance processor performance in dealing with conditional branches. The obtained results will be valuable for improving the efficiency of computational systems.
 
-* Observações:
-  - Caso esteja obtendo erro na compilação do simulador devido a biblioteca stdc++fs, utilize a regra nofs:
-    `make nofs`
-  - Um vídeo de demonstração da execução do simulador pode ser visto [aqui](https://youtu.be/hleCH6yndPY)
+### **METHODOLOGY**
 
-Instruções suportadas:
+In the implementation of the correlation-based branch predictor, we added a predictor table represented as a vector (std::vector< int > table). Each entry in the table is a saturation counter that stores the history of previous branches. To predict the branch outcome for an instruction, we query the predictor table using the provided index. Based on the saturation counter's value, we decide whether the branch will be taken or not taken.
 
-| Sem especulação | Com especulação |
-| --------------- | --------------- |
-| DADD            | BEQ             |
-| DADDI           | BNE             |
-| DSUB            | BGTZ            |
-| DSUBI           | BLTZ            |
-| DMUL            | BGEZ            |
-| DDIV            | BLEZ            |
-| LD              | SGT             |
-| SD              | SLT             |
-| --              | J               |
+To update the state of the predictor, we use the same index to access the corresponding saturation counter in the table and update it based on the actual branch outcome. If the branch was taken, we increment the saturation counter; otherwise, we decrement it.
+
+Regarding the code sections used to evaluate the prediction schemes, they were created based on examples found in the "benchmark" folder of the repository. We selected code sections that covered different branch scenarios, such as many branches, branches with different patterns (upward, downward), and nested branches. These code sections were designed to exercise the branch predictor and evaluate its effectiveness in correctly predicting the behavior of conditional branches.
+
+For the comparison between the two implemented prediction models, we executed the code sections using both the correlation-based branch predictor and the pre-existing predictor. We analyzed and compared the performance of these predictors in terms of prediction accuracy. This comparison allowed us to evaluate the efficiency of the new prediction scheme in relation to the existing model.
+
+By carrying out these implementation steps, we were able to extend TFSim with new program sections, implement the correlation-based branch predictor, and perform a performance comparison between the two prediction models. These actions allowed us to achieve the specific objectives proposed for this work
+
+### **AUTHORS**
+
+- Giovane Hashinokuti Iwamoto - Computer Science student at UFMS - Brazil - MS
+
+- Matheus Tavares Guerson - Computer Science student at UFMS - Brazil - MS
+
+- Rafael Eitaro Oshiro - Computer Science student at UFMS - Brazil - MS

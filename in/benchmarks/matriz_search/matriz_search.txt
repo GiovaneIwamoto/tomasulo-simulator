@@ -18,10 +18,8 @@ LD R5,0(R20)
 BEQ R5,R8,5
 DADDI R3,R3,1
 J -7
-// fim coluna loop
 DADDI R2,R2,1
 J -11
 // END
 DADDI R1,R0,1
-// fim linha loop
 DADD R0,R0,R0

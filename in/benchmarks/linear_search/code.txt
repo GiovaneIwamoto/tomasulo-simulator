@@ -9,7 +9,7 @@ for(i = 0; i != size; i++) {
 }
 
 ------------------------------
-Mapeamento de registradores
+Reg Map
 ------------------------------
 R1 -> retorno
 R5 -> start = 0
@@ -19,6 +19,6 @@ R11 -> i
 R21 -> A[i]
 
 ------------------------------
-Mapeamento da memória
+Mem Map
 ------------------------------
 0 0 0,..., 42

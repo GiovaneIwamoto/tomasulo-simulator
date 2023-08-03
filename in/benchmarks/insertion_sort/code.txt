@@ -1,7 +1,7 @@
 // Insertion sort
 
 i = 1
-while i < tamanho(A)
+while i < size(A)
     x = A[i]
     j = i - 1
     while j >= 0 and A[j] > x
@@ -13,9 +13,9 @@ while i < tamanho(A)
 end while
 
 ------------------------------
-Mapeamento de registradores
+Reg Map
 ------------------------------
-R1 -> tamanho array
+R1 -> size array
 R2 -> i
 R3 -> j
 R5 -> A[i] ou A[j]
@@ -24,7 +24,7 @@ R10 -> helper outer while
 R11 -> helper inner while
 
 ------------------------------
-Mapeamento da memória
+Mem Map
 ------------------------------
 2 4 5 1 3 6 9 7 10 8 0 0 0 0 0 10 0 0 0 ...
 el1, el2,..., eln-1,...,size array
