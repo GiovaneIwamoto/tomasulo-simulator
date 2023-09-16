@@ -4,7 +4,7 @@
 
 Originally from `lucasreis1/TFSim` [TFSim](https://github.com/lucasreis1/TFSim)
 
-Event-driven simulation of the Tomasulo Algorithm using the C++ interface SystemC, with a complete GUI.
+Event-driven simulation of the Tomasulo Algorithm using the C++ interface SystemC, with a complete Graphical User Interface.
 
 The purpose of this project is to ease the teaching of this algorithm, deemed extremely important to the understanding of out-of-order execution on modern microprocessors.
 
