@@ -4,16 +4,16 @@
 
 Event-driven simulation of the Tomasulo Algorithm using the C++ interface SystemC, with a complete Graphical User Interface. The purpose of this project is to ease the teaching of this algorithm, deemed extremely important to the understanding of out-of-order execution on modern microprocessors.
 
-[![Icons](https://skillicons.dev/icons?i=cpp,py,git&theme=light)](https://skillicons.dev)
-
-> [!CAUTION]
-> Originally from https://github.com/lucasreis1/TFSim
+[![Icons](https://skillicons.dev/icons?i=cpp,py,git&theme=dark)](https://skillicons.dev)
 
 ---
 
 ### **ABSTRACT**
 
 Practical work in Computer Architecture II with the objective of implementing, evaluating, and validating TFSim dynamic branch predictors. Extend the simulator with new significant program sections. Implement a branch prediction scheme based on correlation (m, n). Compare the performance of the implemented branch predictors in TFSim, including the correlation scheme.
+
+> [!CAUTION]
+> Originally from https://github.com/lucasreis1/TFSim
 
 ---
 
